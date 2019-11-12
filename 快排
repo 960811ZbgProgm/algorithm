@@ -1,0 +1,29 @@
+public class QuickSort{
+ 
+  public int[] quickSort(int[] array,int low,int high){
+    if(array.length<0)
+      return null;
+    if(low>=high)
+      return null;
+      
+    int left=low;
+    int right=high;
+    
+    int temp=array[low];//坑1
+    while(left<high){
+      while(left<right && array[right]>temp)
+        right--
+      array[left]=array[right];//坑2
+      while(left<right && array[left]<=temp)
+        left++;
+      array[right]=array[left];//坑3
+    }
+    
+    array[left]=temp;//填最后一个坑
+    
+    quickSort(array,low,left-1);
+    quickSort(array,left+1,right);\
+    
+    return array;
+  }
+}
