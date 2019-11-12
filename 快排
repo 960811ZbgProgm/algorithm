@@ -22,7 +22,7 @@ public class QuickSort{
     array[left]=temp;//填最后一个坑
     
     quickSort(array,low,left-1);
-    quickSort(array,left+1,right);\
+    quickSort(array,left+1,right);
     
     return array;
   }
